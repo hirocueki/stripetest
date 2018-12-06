@@ -1,0 +1,9 @@
+%h1 index here
+
+- @plans.each do |plan|
+  .plan= plan.id
+
+%hr
+
+
+%code= @plans.inspect
