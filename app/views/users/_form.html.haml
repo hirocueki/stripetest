@@ -1,6 +1,9 @@
 
 = form_with( model: [@user], local: true) do |f|
-  .fomr-field
+  .form-field
+    = f.label :name
+    = f.text_field :name
+  .form-field
     = f.label :email
     = f.email_field :email
   = f.submit '登録'

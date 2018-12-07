@@ -1,2 +1,16 @@
-= "your id is #{@user.email}"
+= "Hello #{@user.name}"
+
+= form_tag(subscription_path, method: 'post', id: 'payment-form') do
+  .email= @user.email
+  .customer_id= @user.customer_id
+
+  = "Planを選択"
+  = select_tag 'plan_id', options_for_select([[@plan.nickname, @plan.id]])
+  .form-row
+    #card-element
+    #card-errors{role:"alert"}
+  = submit_tag "Submit Payment", class:"submit"
+
 = link_to 'ログアウト', logout_path, method: :delete
+= javascript_include_tag "https://js.stripe.com/v3/"
+= javascript_include_tag "stripe"

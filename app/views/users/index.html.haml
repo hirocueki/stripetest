@@ -1,0 +1,7 @@
+%ul
+  - @users.each do |user|
+    %li
+      = link_to user.email, user
+
+= @customer_ids.inspect
+-# = debug @customer_ids
